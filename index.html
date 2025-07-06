@@ -650,8 +650,8 @@
             color: white;
         }
 
-        /* Google Form Embed Container Styling */
-        .google-form-container {
+        /* Form Embed Container Styling */
+        .form-embed-container {
             max-width: 700px; /* Limits the width of the iframe container */
             margin: 0 auto; /* Centers the container */
             background: rgba(255,255,255,0.1); /* Subtle background matching the theme */
@@ -765,7 +765,7 @@
                 font-size: 4rem;
             }
 
-            .google-form-container { /* Adjust container for smaller screens */
+            .form-embed-container { /* Adjust container for smaller screens */
                 padding: 15px;
                 border-radius: 15px;
             }
@@ -952,17 +952,18 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Get Started Today</h2>
-            <div class="google-form-container">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeyIo6A1mTK9l0uTJ_-jq9m2Z9gxBXjx0yMPyYbh7K9x-KqyQ/viewform?usp=sharing&ouid=109736176749056445810"
-                        width="100%"
-                        height="800"
+            <div class="form-embed-container">
+                <iframe width="100%"
+                        height="700px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=RMSXM0Xk_UqonoutNrNBYc988ch-fCVNpUfZzhXIm8dUOVY3R0NQRzZGNlpWN09WSFNFVEJSV0xDNC4u&embed=true"
                         frameborder="0"
-                        marginheight="0"
                         marginwidth="0"
-                        style="border-radius: 15px;"
-                        loading="lazy">
-                    Loading...
-                </iframe>
+                        marginheight="0"
+                        style="border: none; border-radius: 15px; max-width:100%; max-height:100vh"
+                        allowfullscreen
+                        webkitallowfullscreen
+                        mozallowfullscreen
+                        msallowfullscreen
+                        loading="lazy"> </iframe>
             </div>
         </div>
     </section>
@@ -1040,7 +1041,7 @@
                                 </div>
                                 <div class="info-card">
                                     <h4>Networking Opportunities</h4>
-                                    <p>Build connections with industry leaders and access to extensive alumni networks.</p>
+                                    <p><span>Build connections with industry leaders and access to extensive alumni networks.</span></p>
                                 </div>
                             </div>
                         </div>
@@ -1400,9 +1401,9 @@
                             <div class="info-grid">
                                 <div class="info-card">
                                     <h4>Temporary Graduate Visa (Subclass 485)</h4>
-                                    <p><strong>Post-Study Work Stream:</strong> For graduates of bachelor's or master's degrees, typically 2-4 years.
-                                    <strong>Graduate Work Stream:</strong> For graduates with specific qualifications, typically 18 months.
-                                    <strong>Regional Extension:</strong> Additional 1-2 years for studying in regional areas.</p>
+                                    <p><strong>Duration:</strong> 2-4 years for Bachelor's/Master's; 18 months for specific qualifications.</p>
+                                    <p><strong>Requirement:</strong> Graduate from an eligible Australian higher education institution.</p>
+                                    <p><strong>Benefit:</strong> Gain Australian work experience for career or immigration pathways.</p>
                                 </div>
                             </div>
                             <div class="highlight-box">
@@ -2345,14 +2346,6 @@
                 }
             });
         });
-
-        // The handleSubmit function is removed as the Google Form handles submission directly.
-        // function handleSubmit(event) {
-        //     event.preventDefault();
-        //     // Form data collection and alert logic removed
-        //     alert('Thank you for your inquiry! We will contact you within 24 hours to schedule your free consultation.');
-        //     event.target.reset();
-        // }
 
         // Add scroll effect to header
         window.addEventListener('scroll', () => {
