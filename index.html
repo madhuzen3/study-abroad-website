@@ -52,15 +52,15 @@
             gap: 2rem;
         }
 
-        .nav-menu a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
+            .nav-menu a {
+                color: white;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
 
-        .nav-menu a:hover {
-            color: #f0f0f0;
-        }
+                .nav-menu a:hover {
+                    color: #f0f0f0;
+                }
 
         /* Hero Section */
         .hero {
@@ -72,16 +72,16 @@
             overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.1)" points="0,1000 1000,800 1000,1000"/></svg>');
-            background-size: cover;
-        }
+            .hero::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.1)" points="0,1000 1000,800 1000,1000"/></svg>');
+                background-size: cover;
+            }
 
         .hero-content {
             max-width: 800px;
@@ -120,11 +120,11 @@
             animation: fadeInUp 1s ease 0.6s forwards;
         }
 
-        .cta-button:hover {
-            background: #ff5252;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
-        }
+            .cta-button:hover {
+                background: #ff5252;
+                transform: translateY(-2px);
+                box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+            }
 
         /* Countries Section */
         .countries {
@@ -163,25 +163,25 @@
             overflow: hidden;
         }
 
-        .country-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transition: left 0.5s ease;
-        }
+            .country-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+                transition: left 0.5s ease;
+            }
 
-        .country-card:hover::before {
-            left: 100%;
-        }
+            .country-card:hover::before {
+                left: 100%;
+            }
 
-        .country-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
+            .country-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            }
 
         .country-flag {
             width: 80px;
@@ -195,11 +195,25 @@
             color: white;
         }
 
-        .usa { background: linear-gradient(135deg, #ff6b6b, #ff8e8e); }
-        .uk { background: linear-gradient(135deg, #4ecdc4, #44a08d); }
-        .australia { background: linear-gradient(135deg, #ffd89b, #19547b); }
-        .canada { background: linear-gradient(135deg, #fc4a1a, #f7b733); }
-        .europe { background: linear-gradient(135deg, #667eea, #764ba2); }
+        .usa {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+        }
+
+        .uk {
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+        }
+
+        .australia {
+            background: linear-gradient(135deg, #ffd89b, #19547b);
+        }
+
+        .canada {
+            background: linear-gradient(135deg, #fc4a1a, #f7b733);
+        }
+
+        .europe {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
 
         .country-card h3 {
             font-size: 1.5rem;
@@ -219,10 +233,10 @@
             transition: all 0.3s ease;
         }
 
-        .learn-more-btn:hover {
-            background: #ff5252;
-            transform: translateY(-2px);
-        }
+            .learn-more-btn:hover {
+                background: #ff5252;
+                transform: translateY(-2px);
+            }
 
         /* Modal Styles */
         .modal {
@@ -255,6 +269,7 @@
                 opacity: 0;
                 transform: translateY(-50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -269,10 +284,10 @@
             text-align: center;
         }
 
-        .modal-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
+            .modal-header h2 {
+                font-size: 2.5rem;
+                margin-bottom: 0.5rem;
+            }
 
         .modal-body {
             padding: 2rem;
@@ -289,21 +304,21 @@
             transition: color 0.3s ease;
         }
 
-        .close:hover {
-            color: #ff6b6b;
-        }
+            .close:hover {
+                color: #ff6b6b;
+            }
 
         .info-section {
             margin-bottom: 2rem;
         }
 
-        .info-section h3 {
-            color: #667eea;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #667eea;
-            padding-bottom: 0.5rem;
-        }
+            .info-section h3 {
+                color: #667eea;
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+                border-bottom: 2px solid #667eea;
+                padding-bottom: 0.5rem;
+            }
 
         .info-grid {
             display: grid;
@@ -319,16 +334,16 @@
             border-left: 4px solid #667eea;
         }
 
-        .info-card h4 {
-            color: #333;
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
+            .info-card h4 {
+                color: #333;
+                margin-bottom: 0.5rem;
+                font-size: 1.1rem;
+            }
 
-        .info-card p {
-            color: #666;
-            line-height: 1.6;
-        }
+            .info-card p {
+                color: #666;
+                line-height: 1.6;
+            }
 
         .process-steps {
             display: flex;
@@ -378,10 +393,10 @@
             text-align: center;
         }
 
-        .highlight-box h4 {
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
+            .highlight-box h4 {
+                margin-bottom: 0.5rem;
+                font-size: 1.2rem;
+            }
 
         /* Services Section */
         .services {
@@ -405,13 +420,13 @@
             transition: transform 0.3s ease;
         }
 
-        .service-card:nth-child(even) {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-        }
+            .service-card:nth-child(even) {
+                background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            }
 
-        .service-card:hover {
-            transform: scale(1.05);
-        }
+            .service-card:hover {
+                transform: scale(1.05);
+            }
 
         .service-icon {
             font-size: 3rem;
@@ -440,11 +455,11 @@
             text-align: center;
         }
 
-        .about-image img {
-            max-width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-        }
+            .about-image img {
+                max-width: 100%;
+                border-radius: 15px;
+                box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            }
 
         /* Contact Section */
         .contact {
@@ -462,29 +477,29 @@
             margin-bottom: 1.5rem;
         }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
+            .form-group label {
+                display: block;
+                margin-bottom: 0.5rem;
+                font-weight: bold;
+            }
 
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 10px;
-            font-size: 1rem;
-            transition: box-shadow 0.3s ease;
-        }
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                width: 100%;
+                padding: 12px;
+                border: none;
+                border-radius: 10px;
+                font-size: 1rem;
+                transition: box-shadow 0.3s ease;
+            }
 
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            box-shadow: 0 0 20px rgba(255,255,255,0.3);
-        }
+                .form-group input:focus,
+                .form-group select:focus,
+                .form-group textarea:focus {
+                    outline: none;
+                    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+                }
 
         .submit-btn {
             background: #ff6b6b;
@@ -498,10 +513,10 @@
             width: 100%;
         }
 
-        .submit-btn:hover {
-            background: #ff5252;
-            transform: translateY(-2px);
-        }
+            .submit-btn:hover {
+                background: #ff5252;
+                transform: translateY(-2px);
+            }
 
         /* Footer */
         .footer {
@@ -530,9 +545,9 @@
             line-height: 1.6;
         }
 
-        .footer-section a:hover {
-            color: #ff6b6b;
-        }
+            .footer-section a:hover {
+                color: #ff6b6b;
+            }
 
         /* Animations */
         @keyframes fadeInUp {
@@ -540,6 +555,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -779,154 +795,203 @@
         </div>
     </div>
 
-   <!-- You already have everything in your page structure (head, body, sections) -->
+    <!-- You already have everything in your page structure (head, body, sections) -->
+    <!-- At the very bottom of your HTML page, before </body>, locate and update this script: -->
+    <script>
+        // Country data
+        const countryData = {
+            usa: {
+                title: "United States",
+                flag: "🇺🇸",
+                content: `
+                        <div class="info-section">
+                            <h3>🎓 Why Study in the USA?</h3>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>World-Class Universities</h4>
+                                    <p>Home to top institutions like Harvard, MIT, Stanford, and many others across various disciplines.</p>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Diverse Programs</h4>
+                                    <p>Over 4,000 accredited colleges and universities offering a wide range of undergraduate, graduate, and doctoral programs.</p>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Innovation Hub</h4>
+                                    <p>The U.S. is home to leading research and innovation hubs, ideal for STEM and entrepreneurial pursuits.</p>
+                                </div>
+                            </div>
+                        </div>
 
-<!-- At the very bottom of your HTML page, before </body>, locate and update this script: -->
-<script>
-    // Country data
-    const countryData = {
-        usa: {
-            title: "United States",
-            flag: "🇺🇸",
-            content: `...` // Already included in your file, no change
-        },
-        uk: {
-            title: "United Kingdom",
-            flag: "🇬🇧",
-            content: `
-                <div class="info-section">
-                    <h3>🎓 Why Study in the UK?</h3>
-                    <div class="info-grid">
-                        <div class="info-card">
-                            <h4>Prestigious Universities</h4>
-                            <p>Home to Oxford, Cambridge, Imperial College London, and more.</p>
+                        <div class="info-section">
+                            <h3>📋 Requirements to Apply</h3>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Academic Records</h4>
+                                    <p>Official transcripts, GPA of 2.5 or above for undergrad, and 3.0+ for graduate programs.</p>
+                                </div>
+                                <div class="info-card">
+                                    <h4>English Proficiency</h4>
+                                    <p>TOEFL (80+), IELTS (6.5+), or equivalent required for most programs.</p>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Standardized Tests</h4>
+                                    <p>SAT/ACT for undergraduate, GRE/GMAT for graduate depending on program requirements.</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="info-card">
-                            <h4>Shorter Course Duration</h4>
-                            <p>Bachelor’s degrees in 3 years and Master’s in 1 year reduce overall cost.</p>
+
+                        <div class="info-section">
+                            <h3>💰 Tuition & Cost of Living</h3>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Tuition Fees</h4>
+                                    <p>Public Universities: $15,000–$30,000/year<br>Private Universities: $35,000–$60,000/year</p>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Living Costs</h4>
+                                    <p>Estimated at $10,000–$18,000/year depending on city and lifestyle.</p>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Scholarships</h4>
+                                    <p>Merit-based and need-based scholarships available from universities and external bodies.</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="info-card">
-                            <h4>Global Recognition</h4>
-                            <p>UK degrees are respected and recognized globally by employers and institutions.</p>
+
+                        <div class="info-section">
+                            <h3>💼 Work Opportunities</h3>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>During Study</h4>
+                                    <p>On-campus jobs (up to 20 hrs/week); CPT allows internships for course credit.</p>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Post Study</h4>
+                                    <p>OPT allows 1 year of work; STEM graduates can extend up to 3 years; H-1B sponsored by employers.</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="info-section">
-                    <h3>💼 Post-Study Work Options</h3>
-                    <div class="info-grid">
-                        <div class="info-card">
-                            <h4>Graduate Route Visa</h4>
-                            <p>Stay and work for 2 years (3 years for PhD graduates) after completing your degree.</p>
+
+                        <div class="info-section">
+                            <h3>🏫 Popular Institutions</h3>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Ivy League</h4>
+                                    <p>Harvard, Yale, Princeton, Columbia, etc.</p>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Tech Schools</h4>
+                                    <p>MIT, Stanford, Caltech, Carnegie Mellon</p>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Public Universities</h4>
+                                    <p>University of Michigan, UC Berkeley, UT Austin</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            `
-        },
-        australia: {
-            title: "Australia",
-            flag: "🇦🇺",
-            content: `
-                <div class="info-section">
-                    <h3>🎓 Why Study in Australia?</h3>
-                    <div class="info-grid">
-                        <div class="info-card">
-                            <h4>Top-Ranked Institutions</h4>
-                            <p>Includes University of Melbourne, ANU, University of Sydney, and more.</p>
+                    `
+            },
+            australia: {
+                title: "Australia",
+                flag: "🇦🇺",
+                content: `
+                        <div class="info-section">
+                            <h3>🎓 Why Study in Australia?</h3>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Top-Ranked Institutions</h4>
+                                    <p>Includes University of Melbourne, ANU, University of Sydney, and more.</p>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Multicultural Environment</h4>
+                                    <p>One of the most welcoming countries with high international student population.</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="info-card">
-                            <h4>Multicultural Environment</h4>
-                            <p>One of the most welcoming countries with high international student population.</p>
+                        <div class="info-section">
+                            <h3>💼 Post-Study Work Opportunities</h3>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Temporary Graduate Visa (485)</h4>
+                                    <p>Work in Australia for 2–4 years after graduation depending on qualification level and location.</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="info-section">
-                    <h3>💼 Post-Study Work Opportunities</h3>
-                    <div class="info-grid">
-                        <div class="info-card">
-                            <h4>Temporary Graduate Visa (485)</h4>
-                            <p>Work in Australia for 2–4 years after graduation depending on qualification level and location.</p>
+                    `
+            },
+            canada: {
+                title: "Canada",
+                flag: "🇨🇦",
+                content: `
+                        <div class="info-section">
+                            <h3>🎓 Why Study in Canada?</h3>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Affordable Tuition</h4>
+                                    <p>Lower tuition fees compared to USA/UK with excellent academic quality.</p>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Welcoming Immigration Policies</h4>
+                                    <p>Friendly policies for permanent residency post graduation.</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            `
-        },
-        canada: {
-            title: "Canada",
-            flag: "🇨🇦",
-            content: `
-                <div class="info-section">
-                    <h3>🎓 Why Study in Canada?</h3>
-                    <div class="info-grid">
-                        <div class="info-card">
-                            <h4>Affordable Tuition</h4>
-                            <p>Lower tuition fees compared to USA/UK with excellent academic quality.</p>
+                        <div class="info-section">
+                            <h3>💼 Post-Study Work Permit</h3>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>PGWP (Post-Graduation Work Permit)</h4>
+                                    <p>Allows you to work in Canada for up to 3 years after finishing your studies.</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="info-card">
-                            <h4>Welcoming Immigration Policies</h4>
-                            <p>Friendly policies for permanent residency post graduation.</p>
+                    `
+            },
+            europe: {
+                title: "Europe",
+                flag: "🇪🇺",
+                content: `
+                        <div class="info-section">
+                            <h3>🎓 Why Study in Europe?</h3>
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Diverse Destinations</h4>
+                                    <p>Study in Germany, France, Netherlands, Sweden, Italy, and more.</p>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Low or No Tuition Fees</h4>
+                                    <p>Public universities in Germany and some other EU nations offer low-cost or free education.</p>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Scholarship Opportunities</h4>
+                                    <p>Erasmus+, DAAD, Eiffel and many other scholarship options available.</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="info-section">
-                    <h3>💼 Post-Study Work Permit</h3>
-                    <div class="info-grid">
-                        <div class="info-card">
-                            <h4>PGWP (Post-Graduation Work Permit)</h4>
-                            <p>Allows you to work in Canada for up to 3 years after finishing your studies.</p>
-                        </div>
-                    </div>
-                </div>
-            `
-        },
-        europe: {
-            title: "Europe",
-            flag: "🇪🇺",
-            content: `
-                <div class="info-section">
-                    <h3>🎓 Why Study in Europe?</h3>
-                    <div class="info-grid">
-                        <div class="info-card">
-                            <h4>Diverse Destinations</h4>
-                            <p>Study in Germany, France, Netherlands, Sweden, Italy, and more.</p>
-                        </div>
-                        <div class="info-card">
-                            <h4>Low or No Tuition Fees</h4>
-                            <p>Public universities in Germany and some other EU nations offer low-cost or free education.</p>
-                        </div>
-                        <div class="info-card">
-                            <h4>Scholarship Opportunities</h4>
-                            <p>Erasmus+, DAAD, Eiffel and many other scholarship options available.</p>
-                        </div>
-                    </div>
-                </div>
-            `
+                    `
+            }
+        };
+
+        // Modal functions
+        function showCountryDetails(country) {
+            const modal = document.getElementById('countryModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalFlag = document.getElementById('modalFlag');
+            const modalBody = document.getElementById('modalBody');
+
+            const data = countryData[country];
+            if (data) {
+                modalTitle.textContent = data.title;
+                modalFlag.textContent = data.flag;
+                modalBody.innerHTML = data.content;
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
         }
-    };
 
-    // Modal functions (you already have this below)
-    function showCountryDetails(country) {
-        const modal = document.getElementById('countryModal');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalFlag = document.getElementById('modalFlag');
-        const modalBody = document.getElementById('modalBody');
-
-        const data = countryData[country];
-        if (data) {
-            modalTitle.textContent = data.title;
-            modalFlag.textContent = data.flag;
-            modalBody.innerHTML = data.content;
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
-    }
-
-    function closeModal() {
-        document.getElementById('countryModal').style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-
-    // ... keep rest of your script unchanged ...
-</script>
+        // Remaining script unchanged
+    </script>
+</body>
 
 </body>
 </html>
