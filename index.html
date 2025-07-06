@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global Study Advisors - Study Abroad Experts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* Base Styles & Reset */
         * {
             margin: 0;
             padding: 0;
@@ -12,10 +15,11 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.7; /* Slightly increased for better readability */
             color: #333;
             overflow-x: hidden;
+            background-color: #fcfcfc; /* A very subtle off-white */
         }
 
         /* Header */
@@ -27,7 +31,8 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 25px rgba(0,0,0,0.15); /* Softer, wider shadow */
+            transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
         }
 
         .nav-container {
@@ -40,8 +45,9 @@
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.9rem; /* Slightly larger */
+            font-weight: 700; /* Bolder */
             text-decoration: none;
             color: white;
         }
@@ -49,24 +55,32 @@
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.2rem; /* Slightly more space */
         }
 
             .nav-menu a {
                 color: white;
                 text-decoration: none;
-                transition: color 0.3s ease;
+                font-weight: 600;
+                font-size: 1.05rem; /* Slightly larger */
+                transition: color 0.3s ease, border-bottom 0.3s ease;
+                padding-bottom: 5px; /* For active border */
             }
 
                 .nav-menu a:hover {
-                    color: #f0f0f0;
+                    color: #e0e0e0;
+                }
+
+                .nav-menu a.active { /* Style for active navigation link */
+                    color: #ffffff;
+                    border-bottom: 3px solid #ff6b6b; /* Accent color highlight */
                 }
 
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 120px 0 80px;
+            padding: 150px 0 100px; /* More padding */
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -81,10 +95,11 @@
                 bottom: 0;
                 background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.1)" points="0,1000 1000,800 1000,1000"/></svg>');
                 background-size: cover;
+                opacity: 0.7; /* Slightly more subtle */
             }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 900px; /* Wider content area */
             margin: 0 auto;
             padding: 0 2rem;
             position: relative;
@@ -92,15 +107,17 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 4rem; /* Larger heading */
+            margin-bottom: 1.2rem;
             opacity: 0;
             animation: fadeInUp 1s ease forwards;
+            font-weight: 700;
         }
 
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
+            font-size: 1.4rem; /* Larger body text */
+            margin-bottom: 2.5rem;
             opacity: 0;
             animation: fadeInUp 1s ease 0.3s forwards;
         }
@@ -108,28 +125,33 @@
         .cta-button {
             background: #ff6b6b;
             color: white;
-            padding: 15px 30px;
+            padding: 18px 35px; /* Larger button */
             border: none;
             border-radius: 50px;
-            font-size: 1.1rem;
+            font-size: 1.2rem; /* Larger font */
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
             opacity: 0;
             animation: fadeInUp 1s ease 0.6s forwards;
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
 
             .cta-button:hover {
                 background: #ff5252;
-                transform: translateY(-2px);
-                box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+                transform: translateY(-3px); /* More pronounced lift */
+                box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4); /* Stronger shadow */
             }
 
-        /* Countries Section */
-        .countries {
-            padding: 80px 0;
-            background: #f8f9fa;
+        /* Sections General */
+        .countries, .services, .testimonials, .about, .contact {
+            padding: 100px 0; /* Consistent section padding */
+        }
+
+        .countries, .testimonials {
+            background: #f8f9fa; /* Light gray background for these sections */
         }
 
         .container {
@@ -139,28 +161,45 @@
         }
 
         .section-title {
+            font-family: 'Poppins', sans-serif;
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
+            font-size: 3rem; /* Larger section titles */
+            margin-bottom: 3.5rem;
             color: #333;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
         }
 
+            .section-title::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 4px;
+                background: #ff6b6b; /* Accent line under title */
+                border-radius: 2px;
+            }
+
+        /* Countries Grid */
         .countries-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly wider cards */
+            gap: 2.5rem; /* More space between cards */
         }
 
         .country-card {
             background: white;
             border-radius: 20px;
-            padding: 2rem;
+            padding: 2.5rem; /* More padding */
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1); /* Softer shadow */
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(230,230,230,0.5); /* Subtle border */
         }
 
             .country-card::before {
@@ -170,7 +209,7 @@
                 left: -100%;
                 width: 100%;
                 height: 100%;
-                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); /* Softer shimmer */
                 transition: left 0.5s ease;
             }
 
@@ -179,77 +218,89 @@
             }
 
             .country-card:hover {
-                transform: translateY(-10px);
-                box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+                transform: translateY(-12px); /* More pronounced lift */
+                box-shadow: 0 25px 50px rgba(0,0,0,0.2); /* Stronger hover shadow */
             }
 
         .country-flag {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 1rem;
+            width: 90px; /* Larger flag */
+            height: 90px; /* Larger flag */
+            margin: 0 auto 1.5rem; /* More margin */
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 3rem; /* Larger emoji */
             color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .country-card:hover .country-flag {
+            transform: scale(1.05); /* Slight scale on hover */
         }
 
         /* Specific flag colors */
         .usa {
-            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            background: linear-gradient(135deg, #FF4B55, #0072C6);
         }
-
+        /* Red and Blue */
         .uk {
-            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+            background: linear-gradient(135deg, #00247D, #BF0A30);
         }
-
+        /* Blue and Red */
         .australia {
-            background: linear-gradient(135deg, #ffd89b, #19547b);
+            background: linear-gradient(135deg, #00843D, #004B87);
         }
-
+        /* Green and Blue */
         .canada {
-            background: linear-gradient(135deg, #fc4a1a, #f7b733);
+            background: linear-gradient(135deg, #FF0000, #FFFFFF);
+            background-size: 200% 100%;
+            background-position: center;
         }
-
+        /* Red and White */
         .germany {
-            background: linear-gradient(135deg, #333, #666);
+            background: linear-gradient(135deg, #000000, #DD0000, #FFCC00);
         }
-        /* Simple dark gradient for Black, Red, Gold */
+        /* Black, Red, Gold */
         .ireland {
-            background: linear-gradient(135deg, #009A49, #FF7900);
+            background: linear-gradient(135deg, #009A49, #888, #FF7900);
         }
         /* Green, White, Orange */
         .slovakia {
-            background: linear-gradient(135deg, #0A2E80, #E00034);
+            background: linear-gradient(135deg, #1C337E, #FFFFFF, #EE1D23);
         }
         /* Blue, White, Red */
         .europe {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
 
 
         .country-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.65rem; /* Larger heading */
+            margin-bottom: 0.8rem;
             color: #333;
+            font-weight: 700;
         }
 
         .learn-more-btn {
             background: #ff6b6b;
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 25px;
+            padding: 12px 25px; /* Slightly larger */
+            border-radius: 30px;
             cursor: pointer;
-            font-size: 0.9rem;
-            margin-top: 1rem;
+            font-size: 1rem; /* Slightly larger */
+            margin-top: 1.5rem; /* More margin */
             transition: all 0.3s ease;
+            font-weight: 600;
         }
 
             .learn-more-btn:hover {
                 background: #ff5252;
                 transform: translateY(-2px);
+                box-shadow: 0 8px 15px rgba(255, 107, 107, 0.25);
             }
 
         /* Modal Styles */
@@ -261,177 +312,203 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.5);
-            backdrop-filter: blur(5px);
+            background-color: rgba(0,0,0,0.6); /* Darker backdrop */
+            backdrop-filter: blur(8px); /* More blur */
+            overflow-y: auto; /* Allow scrolling if modal content is too tall */
         }
 
         .modal-content {
             background-color: white;
-            margin: 2% auto;
+            margin: 2.5vh auto; /* Adjusted margin */
             padding: 0;
-            border-radius: 20px;
-            width: 90%;
-            max-width: 900px;
-            max-height: 90vh;
+            border-radius: 25px; /* More rounded */
+            width: 95%; /* Wider on small screens */
+            max-width: 950px; /* Wider max width */
+            max-height: 95vh; /* Adjusted max height */
             overflow-y: auto;
             position: relative;
-            animation: modalSlideIn 0.3s ease;
+            animation: modalSlideIn 0.4s ease-out; /* Slightly longer animation */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3); /* Stronger shadow for modal */
         }
 
         @keyframes modalSlideIn {
             from {
                 opacity: 0;
-                transform: translateY(-50px);
+                transform: translateY(-80px) scale(0.95); /* More pronounced slide and slight scale */
             }
 
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(0) scale(1);
             }
         }
 
         .modal-header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 2rem;
-            border-radius: 20px 20px 0 0;
+            padding: 2.5rem; /* More padding */
+            border-radius: 25px 25px 0 0;
             text-align: center;
+            position: relative;
         }
 
             .modal-header h2 {
-                font-size: 2.5rem;
-                margin-bottom: 0.5rem;
+                font-family: 'Poppins', sans-serif;
+                font-size: 2.8rem; /* Larger heading */
+                margin-bottom: 0.7rem;
+                font-weight: 700;
             }
-
-        .modal-body {
-            padding: 2rem;
-        }
 
         .close {
             position: absolute;
-            right: 20px;
-            top: 20px;
+            right: 25px; /* Adjusted position */
+            top: 20px; /* Adjusted position */
             color: white;
-            font-size: 35px;
+            font-size: 40px; /* Larger close button */
             font-weight: bold;
             cursor: pointer;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, transform 0.2s ease;
         }
 
             .close:hover {
                 color: #ff6b6b;
+                transform: rotate(90deg); /* Spin effect */
             }
 
+        .modal-body {
+            padding: 2.5rem; /* More padding */
+        }
+
         .info-section {
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem; /* More spacing */
         }
 
             .info-section h3 {
+                font-family: 'Poppins', sans-serif;
                 color: #667eea;
-                font-size: 1.5rem;
-                margin-bottom: 1rem;
+                font-size: 1.8rem; /* Larger subheading */
+                margin-bottom: 1.2rem;
                 border-bottom: 2px solid #667eea;
-                padding-bottom: 0.5rem;
+                padding-bottom: 0.8rem;
+                font-weight: 600;
             }
 
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Wider columns */
+            gap: 1.8rem; /* More space */
+            margin-top: 1.5rem;
         }
 
         .info-card {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 15px;
-            border-left: 4px solid #667eea;
+            background: #f0f3fa; /* Slightly darker background */
+            padding: 1.8rem; /* More padding */
+            border-radius: 18px; /* More rounded */
+            border-left: 5px solid #667eea; /* Thicker border */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Subtle shadow */
         }
 
             .info-card h4 {
+                font-family: 'Poppins', sans-serif;
                 color: #333;
-                margin-bottom: 0.5rem;
-                font-size: 1.1rem;
+                margin-bottom: 0.6rem;
+                font-size: 1.25rem; /* Larger heading */
+                font-weight: 600;
             }
 
             .info-card p {
-                color: #666;
+                color: #555;
                 line-height: 1.6;
+                font-size: 0.95rem;
             }
 
         .process-steps {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.2rem; /* More space */
         }
 
         .step {
             display: flex;
-            align-items: center;
-            background: #f8f9fa;
-            padding: 1rem;
-            border-radius: 10px;
-            border-left: 4px solid #ff6b6b;
+            align-items: flex-start; /* Align to top */
+            background: #f0f3fa; /* Slightly darker background */
+            padding: 1.5rem; /* More padding */
+            border-radius: 15px;
+            border-left: 5px solid #ff6b6b; /* Accent color border */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
         .step-number {
             background: #ff6b6b;
             color: white;
-            width: 30px;
-            height: 30px;
+            width: 35px; /* Larger number circle */
+            height: 35px; /* Larger number circle */
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            margin-right: 1rem;
+            font-size: 1.1rem;
+            margin-right: 1.2rem; /* More margin */
             flex-shrink: 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
 
         .step-content h4 {
+            font-family: 'Poppins', sans-serif;
             color: #333;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
+            font-size: 1.15rem;
         }
 
         .step-content p {
             color: #666;
             margin: 0;
+            font-size: 0.9rem;
         }
 
         .highlight-box {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 1.5rem;
-            border-radius: 15px;
-            margin: 1rem 0;
+            padding: 1.8rem; /* More padding */
+            border-radius: 18px;
+            margin: 1.5rem 0; /* More margin */
             text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
             .highlight-box h4 {
-                margin-bottom: 0.5rem;
-                font-size: 1.2rem;
+                font-family: 'Poppins', sans-serif;
+                margin-bottom: 0.8rem;
+                font-size: 1.3rem;
+                font-weight: 700;
             }
+
+            .highlight-box p {
+                font-size: 1rem;
+            }
+
 
         /* Services Section */
         .services {
-            padding: 80px 0;
             background: white;
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            gap: 2.5rem; /* More space */
+            margin-top: 3.5rem;
         }
 
         .service-card {
-            padding: 2rem;
-            border-radius: 15px;
+            padding: 2.5rem; /* More padding */
+            border-radius: 20px;
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             color: white;
             text-align: center;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08); /* Subtle shadow */
         }
 
             .service-card:nth-child(even) {
@@ -439,167 +516,253 @@
             }
 
             .service-card:hover {
-                transform: scale(1.05);
+                transform: scale(1.03); /* Slightly less aggressive scale */
+                box-shadow: 0 15px 30px rgba(0,0,0,0.15); /* More pronounced shadow */
             }
 
         .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 3.5rem; /* Larger icon */
+            margin-bottom: 1.2rem;
+            color: white;
+            transition: transform 0.2s ease-in-out; /* For icon hover */
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1); /* Icon scales on card hover */
+        }
+
+        .service-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.7rem; /* Larger heading */
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
         }
 
         /* Testimonials Section */
         .testimonials {
-            padding: 80px 0;
             background: #f8f9fa;
         }
 
         .testimonial-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            gap: 2.5rem;
+            margin-top: 3.5rem;
         }
 
         .testimonial-card {
             background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1); /* Softer shadow */
             text-align: center;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(230,230,230,0.5);
         }
 
             .testimonial-card:hover {
-                transform: translateY(-5px);
+                transform: translateY(-8px); /* Subtle lift */
+                box-shadow: 0 20px 40px rgba(0,0,0,0.18); /* More pronounced shadow */
             }
 
         .testimonial-quote {
             font-style: italic;
-            margin-bottom: 1rem;
+            font-size: 1.1rem; /* Slightly larger quote */
+            margin-bottom: 1.2rem;
             color: #555;
+            quotes: "“" "”" "‘" "’"; /* Define custom quotes */
         }
 
+            .testimonial-quote::before {
+                content: open-quote;
+                font-size: 2em; /* Larger quote mark */
+                line-height: 0.1em;
+                margin-right: 0.25em;
+                vertical-align: -0.4em;
+                color: #ff6b6b; /* Accent color for quote mark */
+            }
+
+            .testimonial-quote::after {
+                content: close-quote;
+                font-size: 2em;
+                line-height: 0.1em;
+                margin-left: 0.25em;
+                vertical-align: -0.4em;
+                color: #ff6b6b;
+            }
+
         .testimonial-author {
-            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
             color: #333;
+            font-size: 1.15rem;
+            margin-bottom: 0.3rem;
         }
 
         .testimonial-university {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: #777;
         }
 
-
         /* About Section */
         .about {
-            padding: 80px 0;
-            background: #f8f9fa;
+            background: white;
         }
 
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 4rem; /* More space */
             align-items: center;
         }
 
         .about-text {
             font-size: 1.1rem;
             line-height: 1.8;
+            color: #444;
         }
 
         .about-image {
             text-align: center;
         }
 
-            .about-image img {
-                max-width: 100%;
-                border-radius: 15px;
-                box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            .about-image > div { /* Target the custom globe div */
+                width: 450px; /* Larger globe */
+                height: 350px; /* Larger globe */
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 6rem; /* Larger emoji */
+                margin: 0 auto;
+                box-shadow: 0 15px 35px rgba(0,0,0,0.15); /* Stronger shadow */
             }
 
         /* Contact Section */
         .contact {
-            padding: 80px 0;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
         }
 
         .contact-form {
-            max-width: 600px;
+            max-width: 650px; /* Wider form */
             margin: 0 auto;
+            padding: 2.5rem; /* Inner padding */
+            background: rgba(255,255,255,0.1); /* Subtle background for form */
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem; /* More space */
         }
 
             .form-group label {
                 display: block;
-                margin-bottom: 0.5rem;
-                font-weight: bold;
+                margin-bottom: 0.6rem; /* More space */
+                font-weight: 600;
+                font-size: 1.05rem;
             }
 
             .form-group input,
             .form-group select,
             .form-group textarea {
                 width: 100%;
-                padding: 12px;
-                border: none;
-                border-radius: 10px;
+                padding: 14px; /* More padding */
+                border: 1px solid rgba(255,255,255,0.3); /* Subtle border */
+                background-color: rgba(255,255,255,0.1); /* More visible input field */
+                color: white;
+                border-radius: 12px; /* More rounded */
                 font-size: 1rem;
-                transition: box-shadow 0.3s ease;
+                transition: box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
             }
+
+                .form-group input::placeholder,
+                .form-group textarea::placeholder {
+                    color: rgba(255,255,255,0.7);
+                }
 
                 .form-group input:focus,
                 .form-group select:focus,
                 .form-group textarea:focus {
                     outline: none;
-                    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+                    box-shadow: 0 0 0 4px rgba(255,255,255,0.3); /* Stronger, colored focus ring */
+                    border-color: white;
+                    background-color: rgba(255,255,255,0.2);
                 }
+            /* Style for select dropdown arrow */
+            .form-group select {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-position: right 12px center;
+                background-size: 16px;
+                padding-right: 30px; /* Space for the custom arrow */
+            }
+
+            .form-group option {
+                color: #333; /* Darker text for options in dropdown */
+                background-color: white;
+            }
+
 
         .submit-btn {
             background: #ff6b6b;
             color: white;
-            padding: 12px 30px;
+            padding: 15px 30px; /* Larger button */
             border: none;
             border-radius: 50px;
-            font-size: 1.1rem;
+            font-size: 1.15rem; /* Larger font */
             cursor: pointer;
             transition: all 0.3s ease;
             width: 100%;
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
 
             .submit-btn:hover {
                 background: #ff5252;
-                transform: translateY(-2px);
+                transform: translateY(-3px);
+                box-shadow: 0 12px 25px rgba(255, 107, 107, 0.4);
             }
 
         /* Footer */
         .footer {
-            background: #333;
+            background: #222; /* Darker footer */
             color: white;
-            padding: 40px 0;
+            padding: 50px 0; /* More padding */
             text-align: center;
         }
 
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+            gap: 2.5rem; /* More space */
+            margin-bottom: 2.5rem;
         }
 
         .footer-section h3 {
-            margin-bottom: 1rem;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 1.2rem;
             color: #ff6b6b;
+            font-size: 1.4rem;
         }
 
         .footer-section p,
         .footer-section a {
-            color: #ccc;
+            color: #bbb; /* Lighter gray for text */
             text-decoration: none;
-            line-height: 1.6;
+            line-height: 1.8; /* More line height */
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
         }
 
             .footer-section a:hover {
@@ -622,25 +785,71 @@
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .nav-menu {
-                display: none;
+                display: none; /* For simplicity, still hiding nav-menu on mobile for now */
             }
 
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
 
-            .about-content {
-                grid-template-columns: 1fr;
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 1rem;
             }
 
             .section-title {
                 font-size: 2rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .countries, .services, .testimonials, .about, .contact {
+                padding: 60px 0;
+            }
+
+            .country-card, .service-card, .testimonial-card, .info-card, .step {
+                padding: 1.8rem;
+            }
+
+            .modal-content {
+                margin: 5vh auto;
+                width: 95%;
+                max-width: 95%;
+            }
+
+            .modal-header h2 {
+                font-size: 2rem;
+            }
+
+            .modal-body {
+                padding: 1.8rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .about-image > div {
+                width: 300px;
+                height: 250px;
+                font-size: 4rem;
+            }
+
+            .contact-form {
+                padding: 1.8rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <nav class="nav-container">
             <a href="#" class="logo">Global Study Advisors</a>
@@ -655,7 +864,6 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Your Gateway to Global Education</h1>
@@ -664,7 +872,6 @@
         </div>
     </section>
 
-    <!-- Countries Section -->
     <section id="countries" class="countries">
         <div class="container">
             <h2 class="section-title">Study Destinations</h2>
@@ -721,38 +928,37 @@
         </div>
     </section>
 
-    <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
             <h2 class="section-title">Our Services</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">🎓</div>
+                    <div class="service-icon"><i class="fas fa-university"></i></div>
                     <h3>University Selection</h3>
                     <p>Expert guidance in choosing the right university and program that matches your career goals and academic background.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">📝</div>
+                    <div class="service-icon"><i class="fas fa-file-alt"></i></div>
                     <h3>Application Assistance</h3>
                     <p>Complete support with application forms, essays, and documentation to maximize your chances of acceptance.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">💰</div>
+                    <div class="service-icon"><i class="fas fa-hand-holding-usd"></i></div>
                     <h3>Scholarship Guidance</h3>
                     <p>Help you find and apply for scholarships, grants, and financial aid opportunities to reduce your education costs.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">📋</div>
+                    <div class="service-icon"><i class="fas fa-passport"></i></div>
                     <h3>Visa Processing</h3>
                     <p>Comprehensive visa application support, interview preparation, and documentation assistance for all countries.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">✈️</div>
+                    <div class="service-icon"><i class="fas fa-plane-departure"></i></div>
                     <h3>Pre-Departure Support</h3>
                     <p>Complete preparation for your journey including accommodation, travel arrangements, and cultural orientation.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🏠</div>
+                    <div class="service-icon"><i class="fas fa-home"></i></div>
                     <h3>Post-Arrival Services</h3>
                     <p>Ongoing support after you arrive, including accommodation assistance, bank account setup, and local guidance.</p>
                 </div>
@@ -760,7 +966,6 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
         <div class="container">
             <h2 class="section-title">What Our Students Say</h2>
@@ -799,7 +1004,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
             <h2 class="section-title">About Global Study Advisors</h2>
@@ -812,15 +1016,12 @@
                     <p>From initial consultation to post-arrival support, we're with you every step of the way. Your success is our mission, and we're committed to making your study abroad dreams a reality.</p>
                 </div>
                 <div class="about-image">
-                    <div style="width: 400px; height: 300px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem; margin: 0 auto;">
-                        🌍
-                    </div>
+                    <div>🌍</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Get Started Today</h2>
@@ -870,7 +1071,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -900,7 +1100,6 @@
         </div>
     </footer>
 
-    <!-- Country Details Modal -->
     <div id="countryModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -909,7 +1108,6 @@
                 <p id="modalFlag">🇺🇸</p>
             </div>
             <div class="modal-body" id="modalBody">
-                <!-- Content will be populated by JavaScript -->
             </div>
         </div>
     </div>
@@ -1701,7 +1899,7 @@
                                 <div class="info-card">
                                     <h4>Total Annual Cost</h4>
                                     <p><strong>Average:</strong> €10,000 - €15,000/year for public universities.<br>
-                                    <strong>Varies by:</strong> Location, personal lifestyle, and university type.</p>
+                                    <strong>Varies by:</strong> Location, personal lifestyle, and university type</p>
                                 </div>
                             </div>
                         </div>
@@ -2213,14 +2411,14 @@
                 modalFlag.textContent = data.flag;
                 modalBody.innerHTML = data.content;
                 modal.style.display = 'block';
-                document.body.style.overflow = 'hidden';
+                document.body.style.overflow = 'hidden'; // Prevent scrolling body when modal is open
             }
         }
 
         function closeModal() {
             const modal = document.getElementById('countryModal');
             modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
+            document.body.style.overflow = 'auto'; // Re-enable body scrolling
         }
 
         // Close modal when clicking outside
@@ -2273,9 +2471,11 @@
             if (window.scrollY > 100) {
                 header.style.background = 'rgba(102, 126, 234, 0.95)';
                 header.style.backdropFilter = 'blur(10px)';
+                header.style.boxShadow = '0 6px 30px rgba(0,0,0,0.2)';
             } else {
                 header.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
                 header.style.backdropFilter = 'none';
+                header.style.boxShadow = '0 4px 25px rgba(0,0,0,0.15)';
             }
         });
 
@@ -2300,6 +2500,54 @@
             card.style.transform = 'translateY(30px)';
             card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(card);
+        });
+
+        // Highlight active navigation link on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-menu a');
+
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const currentSectionId = entry.target.id;
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href').substring(1) === currentSectionId) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, {
+            rootMargin: '-50% 0px -50% 0px', // When the middle of the section is in viewport
+            threshold: 0
+        });
+
+        sections.forEach(section => {
+            navObserver.observe(section);
+        });
+
+        // Initial active link for the home section when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.location.hash === '' || window.location.hash === '#home') {
+                document.querySelector('.nav-menu a[href="#home"]').classList.add('active');
+            } else {
+                const targetId = window.location.hash.substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    // Scroll to the target element if a hash is present on load
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Set active class after scrolling to avoid flickering on load
+                    setTimeout(() => {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === window.location.hash) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }, 500); // Adjust timeout if needed
+                }
+            }
         });
     </script>
 </body>
