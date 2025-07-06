@@ -779,296 +779,154 @@
         </div>
     </div>
 
-    <script>
-        // Country data
-        const countryData = {
-            usa: {
-                title: "United States",
-                flag: "🇺🇸",
-                content: `
-                    <div class="info-section">
-                        <h3>🎓 Why Study in the USA?</h3>
-                        <div class="info-grid">
-                            <div class="info-card">
-                                <h4>World-Class Universities</h4>
-                                <p>Home to 8 of the top 10 universities globally including Harvard, MIT, Stanford, and Princeton.</p>
-                            </div>
-                            <div class="info-card">
-                                <h4>Diverse Academic Programs</h4>
-                                <p>Over 4,000 accredited institutions offering countless specializations and interdisciplinary studies.</p>
-                            </div>
-                            <div class="info-card">
-                                <h4>Research Opportunities</h4>
-                                <p>Access to cutting-edge research facilities and opportunities to work with leading professors.</p>
-                            </div>
-                            <div class="info-card">
-                                <h4>Cultural Diversity</h4>
-                                <p>Study alongside students from all over the world in a multicultural environment.</p>
-                            </div>
-                            <div class="info-card">
-                                <h4>Innovation Hub</h4>
-                                <p>Located in Silicon Valley and other tech hubs, perfect for entrepreneurship and startups.</p>
-                            </div>
-                            <div class="info-card">
-                                <h4>Networking Opportunities</h4>
-                                <p>Build connections with industry leaders and access to extensive alumni networks.</p>
-                            </div>
+   <!-- You already have everything in your page structure (head, body, sections) -->
+
+<!-- At the very bottom of your HTML page, before </body>, locate and update this script: -->
+<script>
+    // Country data
+    const countryData = {
+        usa: {
+            title: "United States",
+            flag: "🇺🇸",
+            content: `...` // Already included in your file, no change
+        },
+        uk: {
+            title: "United Kingdom",
+            flag: "🇬🇧",
+            content: `
+                <div class="info-section">
+                    <h3>🎓 Why Study in the UK?</h3>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h4>Prestigious Universities</h4>
+                            <p>Home to Oxford, Cambridge, Imperial College London, and more.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>Shorter Course Duration</h4>
+                            <p>Bachelor’s degrees in 3 years and Master’s in 1 year reduce overall cost.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>Global Recognition</h4>
+                            <p>UK degrees are respected and recognized globally by employers and institutions.</p>
                         </div>
                     </div>
-
-                    <div class="info-section">
-                        <h3>💼 Work Options During Studies</h3>
-                        <div class="info-grid">
-                            <div class="info-card">
-                                <h4>On-Campus Employment</h4>
-                                <p>F-1 students can work up to 20 hours/week on-campus during academic sessions, full-time during breaks.</p>
-                            </div>
-                            <div class="info-card">
-                                <h4>Curricular Practical Training (CPT)</h4>
-                                <p>Work authorization for internships and co-op programs that are part of your curriculum.</p>
-                            </div>
-                            <div class="info-card">
-                                <h4>Optional Practical Training (OPT)</h4>
-                                <p>12 months of work authorization in your field of study, can be used during or after studies.</p>
-                            </div>
-                        </div>
-                        <div class="highlight-box">
-                            <h4>💡 Pro Tip</h4>
-                            <p>STEM graduates get additional 24 months of OPT extension, totaling 36 months of work experience!</p>
+                </div>
+                <div class="info-section">
+                    <h3>💼 Post-Study Work Options</h3>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h4>Graduate Route Visa</h4>
+                            <p>Stay and work for 2 years (3 years for PhD graduates) after completing your degree.</p>
                         </div>
                     </div>
-
-                    <div class="info-section">
-                        <h3>🏢 Post-Study Work Permits</h3>
-                        <div class="info-grid">
-                            <div class="info-card">
-                                <h4>OPT (Optional Practical Training)</h4>
-                                <p><strong>Duration:</strong> 12 months for all graduates<br>
-                                <strong>STEM Extension:</strong> Additional 24 months for STEM fields<br>
-                                <strong>Total:</strong> Up to 36 months</p>
-                            </div>
-                            <div class="info-card">
-                                <h4>H-1B Visa</h4>
-                                <p><strong>Duration:</strong> 3 years (renewable for another 3 years)<br>
-                                <strong>Requirement:</strong> Employer sponsorship<br>
-                                <strong>Application:</strong> Annual lottery system</p>
-                            </div>
+                </div>
+            `
+        },
+        australia: {
+            title: "Australia",
+            flag: "🇦🇺",
+            content: `
+                <div class="info-section">
+                    <h3>🎓 Why Study in Australia?</h3>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h4>Top-Ranked Institutions</h4>
+                            <p>Includes University of Melbourne, ANU, University of Sydney, and more.</p>
                         </div>
-                        <div class="highlight-box">
-                            <h4>🎯 Key Advantage</h4>
-                            <p>STEM graduates have the longest work authorization period, making USA ideal for technology and engineering careers!</p>
+                        <div class="info-card">
+                            <h4>Multicultural Environment</h4>
+                            <p>One of the most welcoming countries with high international student population.</p>
                         </div>
                     </div>
-
-                    <div class="info-section">
-                        <h3>📋 Application Process</h3>
-                        <div class="process-steps">
-                            <div class="step">
-                                <div class="step-number">1</div>
-                                <div class="step-content">
-                                    <h4>Research & University Selection</h4>
-                                    <p>Choose programs based on your goals, budget, and career aspirations. Consider rankings, location, and specializations.</p>
-                                </div>
-                            </div>
-                            <div class="step">
-                                <div class="step-number">2</div>
-                                <div class="step-content">
-                                    <h4>Standardized Tests</h4>
-                                    <p>Take required tests: TOEFL/IELTS for English, GRE/GMAT for graduate programs, SAT/ACT for undergraduate.</p>
-                                </div>
-                            </div>
-                            <div class="step">
-                                <div class="step-number">3</div>
-                                <div class="step-content">
-                                    <h4>Application Preparation</h4>
-                                    <p>Prepare transcripts, letters of recommendation, statement of purpose, and resume. Each university has specific requirements.</p>
-                                </div>
-                            </div>
-                            <div class="step">
-                                <div class="step-number">4</div>
-                                <div class="step-content">
-                                    <h4>Submit Applications</h4>
-                                    <p>Apply through university portals or Common Application. Pay application fees (typically $50-$100 per application).</p>
-                                </div>
-                            </div>
-                            <div class="step">
-                                <div class="step-number">5</div>
-                                <div class="step-content">
-                                    <h4>Interview Process</h4>
-                                    <p>Some programs require interviews. Prepare for video or phone interviews with admissions committees.</p>
-                                </div>
-                            </div>
-                            <div class="step">
-                                <div class="step-number">6</div>
-                                <div class="step-content">
-                                    <h4>Receive I-20 Form</h4>
-                                    <p>Upon acceptance, university issues I-20 form. Pay SEVIS fee ($350) and schedule visa interview.</p>
-                                </div>
-                            </div>
-                            <div class="step">
-                                <div class="step-number">7</div>
-                                <div class="step-content">
-                                    <h4>F-1 Student Visa</h4>
-                                    <p>Attend visa interview at US embassy/consulate. Prepare financial documents and academic records.</p>
-                                </div>
-                            </div>
-                            <div class="step">
-                                <div class="step-number">8</div>
-                                <div class="step-content">
-                                    <h4>Pre-Departure Preparation</h4>
-                                    <p>Arrange accommodation, book flights, attend orientation programs, and prepare for cultural adjustment.</p>
-                                </div>
-                            </div>
+                </div>
+                <div class="info-section">
+                    <h3>💼 Post-Study Work Opportunities</h3>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h4>Temporary Graduate Visa (485)</h4>
+                            <p>Work in Australia for 2–4 years after graduation depending on qualification level and location.</p>
                         </div>
                     </div>
-
-                    <div class="info-section">
-                        <h3>💰 Cost Overview</h3>
-                        <div class="info-grid">
-                            <div class="info-card">
-                                <h4>Tuition Fees</h4>
-                                <p><strong>Public Universities:</strong> $10,000-$35,000/year<br>
-                                <strong>Private Universities:</strong> $35,000-$70,000/year</p>
-                            </div>
-                            <div class="info-card">
-                                <h4>Living Expenses</h4>
-                                <p><strong>Housing:</strong> $8,000-$15,000/year<br>
-                                <strong>Food & Personal:</strong> $4,000-$8,000/year</p>
-                            </div>
-                            <div class="info-card">
-                                <h4>Total Annual Cost</h4>
-                                <p><strong>Average:</strong> $25,000-$80,000/year<br>
-                                <strong>Varies by:</strong> Location, lifestyle, and university type</p>
-                            </div>
+                </div>
+            `
+        },
+        canada: {
+            title: "Canada",
+            flag: "🇨🇦",
+            content: `
+                <div class="info-section">
+                    <h3>🎓 Why Study in Canada?</h3>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h4>Affordable Tuition</h4>
+                            <p>Lower tuition fees compared to USA/UK with excellent academic quality.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>Welcoming Immigration Policies</h4>
+                            <p>Friendly policies for permanent residency post graduation.</p>
                         </div>
                     </div>
-
-                    <div class="info-section">
-                        <h3>🏆 Popular Universities</h3>
-                        <div class="info-grid">
-                            <div class="info-card">
-                                <h4>Ivy League</h4>
-                                <p>Harvard, Yale, Princeton, Columbia, UPenn, Dartmouth, Brown, Cornell</p>
-                            </div>
-                            <div class="info-card">
-                                <h4>Technology</h4>
-                                <p>MIT, Stanford, Caltech, Carnegie Mellon, Georgia Tech, UC Berkeley</p>
-                            </div>
-                            <div class="info-card">
-                                <h4>Business</h4>
-                                <p>Wharton, Harvard Business School, Stanford GSB, Kellogg, Booth</p>
-                            </div>
-                            <div class="info-card">
-                                <h4>Public Universities</h4>
-                                <p>UCLA, UC Berkeley, University of Michigan, UT Austin, UW Seattle</p>
-                            </div>
+                </div>
+                <div class="info-section">
+                    <h3>💼 Post-Study Work Permit</h3>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h4>PGWP (Post-Graduation Work Permit)</h4>
+                            <p>Allows you to work in Canada for up to 3 years after finishing your studies.</p>
                         </div>
                     </div>
-                `
-            }
-        };
-
-        // Modal functions
-        function showCountryDetails(country) {
-            const modal = document.getElementById('countryModal');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalFlag = document.getElementById('modalFlag');
-            const modalBody = document.getElementById('modalBody');
-            
-            const data = countryData[country];
-            if (data) {
-                modalTitle.textContent = data.title;
-                modalFlag.textContent = data.flag;
-                modalBody.innerHTML = data.content;
-                modal.style.display = 'block';
-                document.body.style.overflow = 'hidden';
-            }
+                </div>
+            `
+        },
+        europe: {
+            title: "Europe",
+            flag: "🇪🇺",
+            content: `
+                <div class="info-section">
+                    <h3>🎓 Why Study in Europe?</h3>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h4>Diverse Destinations</h4>
+                            <p>Study in Germany, France, Netherlands, Sweden, Italy, and more.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>Low or No Tuition Fees</h4>
+                            <p>Public universities in Germany and some other EU nations offer low-cost or free education.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>Scholarship Opportunities</h4>
+                            <p>Erasmus+, DAAD, Eiffel and many other scholarship options available.</p>
+                        </div>
+                    </div>
+                </div>
+            `
         }
+    };
 
-        function closeModal() {
-            const modal = document.getElementById('countryModal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
+    // Modal functions (you already have this below)
+    function showCountryDetails(country) {
+        const modal = document.getElementById('countryModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalFlag = document.getElementById('modalFlag');
+        const modalBody = document.getElementById('modalBody');
+
+        const data = countryData[country];
+        if (data) {
+            modalTitle.textContent = data.title;
+            modalFlag.textContent = data.flag;
+            modalBody.innerHTML = data.content;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
         }
+    }
 
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            const modal = document.getElementById('countryModal');
-            if (event.target === modal) {
-                closeModal();
-            }
-        }
+    function closeModal() {
+        document.getElementById('countryModal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
 
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
-        });
+    // ... keep rest of your script unchanged ...
+</script>
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Form submission handler
-        function handleSubmit(event) {
-            event.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(event.target);
-            const data = Object.fromEntries(formData);
-            
-            // Show success message
-            alert('Thank you for your inquiry! We will contact you within 24 hours to schedule your free consultation.');
-            
-            // Reset form
-            event.target.reset();
-        }
-
-        // Add scroll effect to header
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(102, 126, 234, 0.95)';
-                header.style.backdropFilter = 'blur(10px)';
-            } else {
-                header.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
-                header.style.backdropFilter = 'none';
-            }
-        });
-
-        // Animate elements on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all cards and sections
-        document.querySelectorAll('.country-card, .service-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
-        });
-    </script>
 </body>
 </html>
