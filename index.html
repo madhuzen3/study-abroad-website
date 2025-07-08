@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global Study Advisors - Study Abroad Experts</title>
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@600;700;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Base Styles & Reset */
@@ -30,15 +28,23 @@
 
         /* Header */
         .header {
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); /* Red shades */
+            /* Adjusted initial gradient for better blend */
+            background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%); /* Slightly brighter initial reds */
             color: white;
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 25px rgba(0,0,0,0.15); /* Softer, wider shadow */
+            z-index: 1000; /* Ensure header is always on top */
+            box-shadow: 0 4px 25px rgba(0,0,0,0.15);
             transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        /* Scrolled header style - much darker for clear distinction */
+        .header.scrolled {
+            background: #4A0404; /* A very deep, dark red/maroon */
+            backdrop-filter: blur(8px);
+            box-shadow: 0 6px 30px rgba(0,0,0,0.35); /* Stronger shadow when scrolled */
         }
 
         .nav-container {
@@ -52,8 +58,8 @@
 
         .logo {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.9rem; /* Slightly larger */
-            font-weight: 700; /* Bolder */
+            font-size: 1.9rem;
+            font-weight: 700;
             text-decoration: none;
             color: white;
         }
@@ -61,51 +67,68 @@
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 2.2rem; /* Slightly more space */
+            gap: 2.2rem;
         }
 
-            .nav-menu a {
-                color: white;
-                text-decoration: none;
-                font-weight: 600;
-                font-size: 1.05rem; /* Slightly larger */
-                transition: color 0.3s ease, border-bottom 0.3s ease;
-                padding-bottom: 5px; /* For active border */
-            }
+        .nav-menu a {
+            color: #ffffff; /* Explicitly white for clear visibility on both header states */
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+            padding-bottom: 5px;
+        }
 
-                .nav-menu a:hover {
-                    color: #f0f0f0;
-                }
+        .nav-menu a:hover {
+            color: #ffeb3b; /* A brighter yellow on hover */
+            border-bottom: 3px solid #ffeb3b; /* Yellow underline on hover */
+        }
 
-                .nav-menu a.active { /* Style for active navigation link */
-                    color: #ffffff;
-                    border-bottom: 3px solid #ff6b6b; /* Accent color highlight - kept red */
-                }
+        .nav-menu a.active { /* Style for active navigation link */
+            color: #ffffff; /* Active link text remains white */
+            border-bottom: 3px solid #ffcc00; /* Golden yellow for active state */
+        }
+
+        /* Menu item colors for scrolled header (ensure they stay visible) */
+        .header.scrolled .nav-menu a {
+            color: #ffffff; /* Keep white on scrolled header */
+        }
+
+        .header.scrolled .nav-menu a:hover {
+            color: #ffeb3b; /* Bright yellow on hover for scrolled header */
+            border-bottom-color: #ffeb3b;
+        }
+
+        .header.scrolled .nav-menu a.active {
+            color: #ffffff; /* Keep white for active on scrolled header */
+            border-bottom-color: #ffcc00; /* Golden yellow accent for active underline */
+        }
+
 
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); /* Red shades */
             color: white;
-            padding: 150px 0 100px; /* More padding */
+            padding: 150px 0 100px;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-            .hero::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.1)" points="0,1000 1000,800 1000,1000"/></svg>');
-                background-size: cover;
-                opacity: 0.7; /* Slightly more subtle */
-            }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.1)" points="0,1000 1000,800 1000,1000"/></svg>');
+            background-size: cover;
+            opacity: 0.7;
+        }
 
         .hero-content {
-            max-width: 900px; /* Wider content area */
+            max-width: 900px;
             margin: 0 auto;
             padding: 0 2rem;
             position: relative;
@@ -114,7 +137,7 @@
 
         .hero h1 {
             font-family: 'Poppins', sans-serif;
-            font-size: 4rem; /* Larger heading */
+            font-size: 4rem;
             margin-bottom: 1.2rem;
             opacity: 0;
             animation: fadeInUp 1s ease forwards;
@@ -122,7 +145,7 @@
         }
 
         .hero p {
-            font-size: 1.4rem; /* Larger body text */
+            font-size: 1.4rem;
             margin-bottom: 2.5rem;
             opacity: 0;
             animation: fadeInUp 1s ease 0.3s forwards;
@@ -131,10 +154,10 @@
         .cta-button {
             background: #ff6b6b; /* Accent red */
             color: white;
-            padding: 18px 35px; /* Larger button */
+            padding: 18px 35px;
             border: none;
             border-radius: 50px;
-            font-size: 1.2rem; /* Larger font */
+            font-size: 1.2rem;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
@@ -145,15 +168,15 @@
             letter-spacing: 0.5px;
         }
 
-            .cta-button:hover {
-                background: #ff5252; /* Lighter accent red on hover */
-                transform: translateY(-3px); /* More pronounced lift */
-                box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4); /* Stronger shadow */
-            }
+        .cta-button:hover {
+            background: #ff5252; /* Lighter accent red on hover */
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
+        }
 
         /* Sections General */
         .countries, .services, .testimonials, .about, .contact {
-            padding: 100px 0; /* Consistent section padding */
+            padding: 100px 0;
         }
 
         .countries, .testimonials {
@@ -169,7 +192,7 @@
         .section-title {
             font-family: 'Poppins', sans-serif;
             text-align: center;
-            font-size: 3rem; /* Larger section titles */
+            font-size: 3rem;
             margin-bottom: 3.5rem;
             color: #333;
             font-weight: 700;
@@ -177,115 +200,93 @@
             padding-bottom: 15px;
         }
 
-            .section-title::after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 80px;
-                height: 4px;
-                background: #e74c3c; /* Red accent line under title */
-                border-radius: 2px;
-            }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #e74c3c; /* Red accent line under title */
+            border-radius: 2px;
+        }
 
         /* Countries Grid */
         .countries-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly wider cards */
-            gap: 2.5rem; /* More space between cards */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
         }
 
         .country-card {
             background: white;
             border-radius: 20px;
-            padding: 2.5rem; /* More padding */
+            padding: 2.5rem;
             text-align: center;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.1); /* Softer shadow */
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            border: 1px solid rgba(230,230,230,0.5); /* Subtle border */
+            border: 1px solid rgba(230,230,230,0.5);
         }
 
-            .country-card::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); /* Softer shimmer */
-                transition: left 0.5s ease;
-            }
+        .country-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
 
-            .country-card:hover::before {
-                left: 100%;
-            }
+        .country-card:hover::before {
+            left: 100%;
+        }
 
-            .country-card:hover {
-                transform: translateY(-12px); /* More pronounced lift */
-                box-shadow: 0 25px 50px rgba(0,0,0,0.2); /* Stronger hover shadow */
-            }
+        .country-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
 
         .country-flag {
-            width: 90px; /* Larger flag */
-            height: 90px; /* Larger flag */
-            margin: 0 auto 1.5rem; /* More margin */
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 1.5rem;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem; /* Larger emoji */
+            font-size: 3rem;
             color: white;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
         }
 
         .country-card:hover .country-flag {
-            transform: scale(1.05); /* Slight scale on hover */
+            transform: scale(1.05);
         }
 
         /* Specific flag colors */
-        .usa {
-            background: linear-gradient(135deg, #FF4B55, #0072C6);
-        }
-        /* Red and Blue */
-        .uk {
-            background: linear-gradient(135deg, #00247D, #BF0A30);
-        }
-        /* Blue and Red */
-        .australia {
-            background: linear-gradient(135deg, #00843D, #004B87);
-        }
-        /* Green and Blue */
+        .usa { background: linear-gradient(135deg, #FF4B55, #0072C6); }
+        .uk { background: linear-gradient(135deg, #00247D, #BF0A30); }
+        .australia { background: linear-gradient(135deg, #00843D, #004B87); }
         .canada {
             background: linear-gradient(135deg, #FF0000, #FFFFFF);
             background-size: 200% 100%;
             background-position: center;
         }
-        /* Red and White */
-        .germany {
-            background: linear-gradient(135deg, #000000, #DD0000, #FFCC00);
-        }
-        /* Black, Red, Gold */
-        .ireland {
-            background: linear-gradient(135deg, #009A49, #888, #FF7900);
-        }
-        /* Green, White, Orange */
-        .slovakia {
-            background: linear-gradient(135deg, #1C337E, #FFFFFF, #EE1D23);
-        }
-        /* Blue, White, Red */
-        .europe {
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-        }
-        /* Europe matching new primary */
+        .germany { background: linear-gradient(135deg, #000000, #DD0000, #FFCC00); }
+        .ireland { background: linear-gradient(135deg, #009A49, #888, #FF7900); }
+        .slovakia { background: linear-gradient(135deg, #1C337E, #FFFFFF, #EE1D23); }
+        .europe { background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); }
 
 
         .country-card h3 {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.65rem; /* Larger heading */
+            font-size: 1.65rem;
             margin-bottom: 0.8rem;
             color: #333;
             font-weight: 700;
@@ -295,127 +296,125 @@
             background: #ff6b6b; /* Accent red */
             color: white;
             border: none;
-            padding: 12px 25px; /* Slightly larger */
+            padding: 12px 25px;
             border-radius: 30px;
             cursor: pointer;
-            font-size: 1rem; /* Slightly larger */
-            margin-top: 1.5rem; /* More margin */
+            font-size: 1rem;
+            margin-top: 1.5rem;
             transition: all 0.3s ease;
             font-weight: 600;
         }
 
-            .learn-more-btn:hover {
-                background: #ff5252; /* Lighter accent red on hover */
-                transform: translateY(-2px);
-                box-shadow: 0 8px 15px rgba(255, 107, 107, 0.25);
-            }
+        .learn-more-btn:hover {
+            background: #ff5252; /* Lighter accent red on hover */
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(255, 107, 107, 0.25);
+        }
 
         /* Modal Styles (Removed from index.html, but kept for country pages if needed) */
-        .modal {
-            display: none; /* This will be removed from index.html */
-        }
+        .modal { display: none; }
 
         /* Info sections for country detail pages */
         .country-detail-section {
-            padding: 80px 0; /* Consistent padding for sections */
+            padding: 80px 0;
             background-color: #fcfcfc;
         }
 
-            .country-detail-section:nth-of-type(odd) {
-                background-color: #f8f9fa; /* Alternating background for sections */
-            }
+        .country-detail-section:nth-of-type(odd) {
+            background-color: #f8f9fa;
+        }
 
         .country-detail-header {
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); /* Red shades */
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
             color: white;
-            padding: 120px 0 60px; /* Padding for header on detail pages */
+            padding: 120px 0 60px;
             text-align: center;
             margin-bottom: 50px;
         }
 
-            .country-detail-header h1 {
-                font-family: 'Poppins', sans-serif;
-                font-size: 3.5rem;
-                margin-bottom: 1rem;
-                font-weight: 700;
-            }
-
-            .country-detail-header .flag-icon {
-                font-size: 4rem;
-                margin-top: 1rem;
-            }
-
-        .info-section {
-            margin-bottom: 2.5rem; /* More spacing */
+        .country-detail-header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
         }
 
-            .info-section h3 {
-                font-family: 'Poppins', sans-serif;
-                color: #e74c3c; /* Red heading color */
-                font-size: 1.8rem; /* Larger subheading */
-                margin-bottom: 1.2rem;
-                border-bottom: 2px solid #e74c3c; /* Red border */
-                padding-bottom: 0.8rem;
-                font-weight: 600;
-            }
+        .country-detail-header .flag-icon {
+            font-size: 4rem;
+            margin-top: 1rem;
+        }
+
+        .info-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .info-section h3 {
+            font-family: 'Poppins', sans-serif;
+            color: #e74c3c;
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+            border-bottom: 2px solid #e74c3c;
+            padding-bottom: 0.8rem;
+            font-weight: 600;
+        }
 
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Wider columns */
-            gap: 1.8rem; /* More space */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
             margin-top: 1.5rem;
         }
 
         .info-card {
-            background: #f0f3fa; /* Slightly darker background */
-            padding: 1.8rem; /* More padding */
-            border-radius: 18px; /* More rounded */
-            border-left: 5px solid #e74c3c; /* Red border */
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Subtle shadow */
+            background: #f0f3fa;
+            padding: 1.8rem;
+            border-radius: 18px;
+            border-left: 5px solid #e74c3c;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
-            .info-card h4 {
-                font-family: 'Poppins', sans-serif;
-                color: #333;
-                margin-bottom: 0.6rem;
-                font-size: 1.25rem; /* Larger heading */
-                font-weight: 600;
-            }
+        .info-card h4 {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            margin-bottom: 0.6rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
 
-            .info-card p {
-                color: #555;
-                line-height: 1.6;
-                font-size: 0.95rem;
-            }
+        .info-card p {
+            color: #555;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
 
         .process-steps {
             display: flex;
             flex-direction: column;
-            gap: 1.2rem; /* More space */
+            gap: 1.2rem;
         }
 
         .step {
             display: flex;
-            align-items: flex-start; /* Align to top */
-            background: #f0f3fa; /* Slightly darker background */
-            padding: 1.5rem; /* More padding */
+            align-items: flex-start;
+            background: #f0f3fa;
+            padding: 1.5rem;
             border-radius: 15px;
-            border-left: 5px solid #ff6b6b; /* Accent color border - kept red */
+            border-left: 5px solid #ff6b6b;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
         .step-number {
             background: #ff6b6b; /* Accent red */
             color: white;
-            width: 35px; /* Larger number circle */
-            height: 35px; /* Larger number circle */
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
             font-size: 1.1rem;
-            margin-right: 1.2rem; /* More margin */
+            margin-right: 1.2rem;
             flex-shrink: 0;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
@@ -434,25 +433,25 @@
         }
 
         .highlight-box {
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); /* Red shades */
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
             color: white;
-            padding: 1.8rem; /* More padding */
+            padding: 1.8rem;
             border-radius: 18px;
-            margin: 1.5rem 0; /* More margin */
+            margin: 1.5rem 0;
             text-align: center;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
-            .highlight-box h4 {
-                font-family: 'Poppins', sans-serif;
-                margin-bottom: 0.8rem;
-                font-size: 1.3rem;
-                font-weight: 700;
-            }
+        .highlight-box h4 {
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
 
-            .highlight-box p {
-                font-size: 1rem;
-            }
+        .highlight-box p {
+            font-size: 1rem;
+        }
 
 
         /* Services Section */
@@ -463,43 +462,43 @@
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem; /* More space */
+            gap: 2.5rem;
             margin-top: 3.5rem;
         }
 
         .service-card {
-            padding: 2.5rem; /* More padding */
+            padding: 2.5rem;
             border-radius: 20px;
-            background: linear-gradient(135deg, #ff6b6b 0%, #e74c3c 100%); /* Red variations */
+            background: linear-gradient(135deg, #ff6b6b 0%, #e74c3c 100%);
             color: white;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.08); /* Subtle shadow */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
         }
 
-            .service-card:nth-child(even) {
-                background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%); /* Other red variations */
-            }
+        .service-card:nth-child(even) {
+            background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+        }
 
-            .service-card:hover {
-                transform: scale(1.03); /* Slightly less aggressive scale */
-                box-shadow: 0 15px 30px rgba(0,0,0,0.15); /* More pronounced shadow */
-            }
+        .service-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
 
         .service-icon {
-            font-size: 3.5rem; /* Larger icon */
+            font-size: 3.5rem;
             margin-bottom: 1.2rem;
             color: white;
-            transition: transform 0.2s ease-in-out; /* For icon hover */
+            transition: transform 0.2s ease-in-out;
         }
 
         .service-card:hover .service-icon {
-            transform: scale(1.1); /* Icon scales on card hover */
+            transform: scale(1.1);
         }
 
         .service-card h3 {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.7rem; /* Larger heading */
+            font-size: 1.7rem;
             margin-bottom: 0.8rem;
             font-weight: 700;
         }
@@ -524,42 +523,42 @@
             background: white;
             padding: 2.5rem;
             border-radius: 20px;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.1); /* Softer shadow */
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid rgba(230,230,230,0.5);
         }
 
-            .testimonial-card:hover {
-                transform: translateY(-8px); /* Subtle lift */
-                box-shadow: 0 20px 40px rgba(0,0,0,0.18); /* More pronounced shadow */
-            }
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+        }
 
         .testimonial-quote {
             font-style: italic;
-            font-size: 1.1rem; /* Slightly larger quote */
+            font-size: 1.1rem;
             margin-bottom: 1.2rem;
             color: #555;
-            quotes: "“" "”" "‘" "’"; /* Define custom quotes */
+            quotes: "“" "”" "‘" "’";
         }
 
-            .testimonial-quote::before {
-                content: open-quote;
-                font-size: 2em; /* Larger quote mark */
-                line-height: 0.1em;
-                margin-right: 0.25em;
-                vertical-align: -0.4em;
-                color: #ff6b6b; /* Accent color for quote mark */
-            }
+        .testimonial-quote::before {
+            content: open-quote;
+            font-size: 2em;
+            line-height: 0.1em;
+            margin-right: 0.25em;
+            vertical-align: -0.4em;
+            color: #ff6b6b;
+        }
 
-            .testimonial-quote::after {
-                content: close-quote;
-                font-size: 2em;
-                line-height: 0.1em;
-                margin-left: 0.25em;
-                vertical-align: -0.4em;
-                color: #ff6b6b;
-            }
+        .testimonial-quote::after {
+            content: close-quote;
+            font-size: 2em;
+            line-height: 0.1em;
+            margin-left: 0.25em;
+            vertical-align: -0.4em;
+            color: #ff6b6b;
+        }
 
         .testimonial-author {
             font-family: 'Poppins', sans-serif;
@@ -576,145 +575,228 @@
 
         /* About Section */
         .about {
-            background: white;
+            background: #fcfcfc; /* A very light, clean background */
+            padding: 120px 0; /* More vertical padding */
         }
 
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem; /* More space */
-            align-items: center;
+        .about .section-title {
+            margin-bottom: 5rem; /* More space below the title */
         }
 
-        .about-text {
-            font-size: 1.1rem;
+        /* Styles for the main content block */
+        .about-main-content {
+            font-size: 1.05rem;
             line-height: 1.8;
             color: #444;
+            max-width: 900px; /* Constrain width for readability */
+            margin: 0 auto 5rem auto; /* Center and add margin below */
         }
 
-        .about-image {
+        .about-main-content h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            color: #e74c3c; /* Red accent for sub-headings */
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .about-main-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-main-content strong {
+            color: #333; /* Stronger color for bold text */
+        }
+
+        .experience-highlight {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #e74c3c; /* Prominent red for experience */
+            margin-bottom: 2rem;
             text-align: center;
+            padding: 15px 20px;
+            background: rgba(231, 76, 60, 0.08); /* Very light red background */
+            border-radius: 15px;
+            display: inline-block; /* To make background fit content */
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.1);
+            letter-spacing: 0.5px;
         }
 
-            .about-image > div { /* Target the custom globe div */
-                width: 450px; /* Larger globe */
-                height: 350px; /* Larger globe */
-                background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); /* Red shades */
-                border-radius: 20px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: white;
-                font-size: 6rem; /* Larger emoji */
-                margin: 0 auto;
-                box-shadow: 0 15px 35px rgba(0,0,0,0.15); /* Stronger shadow */
-            }
+        /* Key Strengths Section - NEW FORMAT */
+        .key-strengths-section {
+            padding: 4rem 2rem; /* Consistent padding */
+            background: #f8f9fa; /* Light gray background to separate it */
+            margin-top: 5rem; /* Space from the content above */
+        }
+
+        .key-strengths-section .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.25rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .strengths-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted minmax for better spacing */
+            gap: 2.5rem; /* Consistent gap between cards */
+            max-width: 1200px; /* Match container width */
+            margin: 0 auto;
+        }
+
+        .strength-card {
+            display: flex;
+            align-items: flex-start; /* Align icon and text to the top */
+            background: #ffffff; /* White card background */
+            padding: 2rem; /* More padding inside card */
+            border-radius: 15px; /* Slightly more rounded corners */
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08); /* Softer, wider shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(230,230,230,0.5); /* Subtle border */
+        }
+
+        .strength-card:hover {
+            transform: translateY(-8px); /* More pronounced lift on hover */
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15); /* Stronger shadow on hover */
+        }
+
+        .strength-icon {
+            font-size: 2.5rem; /* Larger icons */
+            color: #e74c3c; /* Primary red accent color */
+            margin-right: 1.2rem; /* More space between icon and text */
+            flex-shrink: 0; /* Prevent icon from shrinking */
+            line-height: 1; /* Ensure icon is aligned well vertically */
+            margin-top: 5px; /* Fine-tune vertical alignment */
+        }
+
+        .strength-text h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem; /* Larger heading for strength */
+            margin-bottom: 0.6rem; /* More space below heading */
+            color: #222;
+            font-weight: 700; /* Bolder heading */
+        }
+
+        .strength-text p {
+            margin: 0;
+            color: #555;
+            line-height: 1.7; /* Slightly more line height for readability */
+            font-size: 0.95rem;
+        }
+
+        /* Global Connections Graphic (No longer part of this section, but keeping styles if it's used elsewhere) */
+        .global-connections-graphic {
+            /* Styles would remain here if used in a different section or removed if not */
+            display: none; /* Hidden as it's no longer part of this specific section */
+        }
 
         /* Contact Section */
         .contact {
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); /* Red shades */
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
             color: white;
-            padding: 100px 0; /* Consistent section padding */
+            padding: 100px 0;
         }
 
         /* Form Container Styling */
-        .contact-form-wrapper { /* New wrapper for the form to match padding/shadows */
+        .contact-form-wrapper {
             max-width: 700px;
             margin: 0 auto;
-            background-color: white; /* White background */
+            background-color: white;
             border-radius: 20px;
-            padding: 40px; /* Increased padding */
-            box-shadow: 0 15px 40px rgba(0,0,0,0.25); /* More prominent shadow */
-            color: #333; /* Default text color for the form content */
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+            color: #333;
         }
 
-            /* Styling for the form elements within the new Web3Forms HTML */
-            .contact-form-wrapper .text-center h1 {
-                font-family: 'Poppins', sans-serif;
-                font-size: 2.2rem; /* Adjusted for smaller form title */
-                color: #333;
-                margin-bottom: 10px;
-                font-weight: 700;
-            }
+        /* Styling for the form elements within the new Web3Forms HTML */
+        .contact-form-wrapper .text-center h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
 
-            .contact-form-wrapper .text-center p {
-                font-size: 1rem;
-                color: #666;
-                margin-bottom: 25px;
-            }
+        .contact-form-wrapper .text-center p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 25px;
+        }
 
-            .contact-form-wrapper label {
-                display: block;
-                margin-bottom: 8px;
-                font-size: 0.95rem;
-                color: #555;
-                font-weight: 600;
-            }
+        .contact-form-wrapper label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            color: #555;
+            font-weight: 600;
+        }
 
-            .contact-form-wrapper input[type="text"],
-            .contact-form-wrapper input[type="email"],
-            .contact-form-wrapper input[type="tel"],
-            .contact-form-wrapper textarea {
-                width: 100%;
-                padding: 12px 15px;
-                border: 1px solid #ddd;
-                border-radius: 8px;
-                font-size: 1rem;
-                transition: border-color 0.3s ease, box-shadow 0.3s ease;
-                color: #333; /* Ensure text is dark */
-                background-color: #fff; /* Ensure background is white */
-            }
+        .contact-form-wrapper input[type="text"],
+        .contact-form-wrapper input[type="email"],
+        .contact-form-wrapper input[type="tel"],
+        .contact-form-wrapper textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            color: #333;
+            background-color: #fff;
+        }
 
-                .contact-form-wrapper input::placeholder,
-                .contact-form-wrapper textarea::placeholder {
-                    color: #aaa;
-                }
+        .contact-form-wrapper input::placeholder,
+        .contact-form-wrapper textarea::placeholder {
+            color: #aaa;
+        }
 
-                .contact-form-wrapper input:focus,
-                .contact-form-wrapper textarea:focus {
-                    outline: none;
-                    border-color: #ff6b6b; /* Accent red focus */
-                    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
-                }
+        .contact-form-wrapper input:focus,
+        .contact-form-wrapper textarea:focus {
+            outline: none;
+            border-color: #ff6b6b; /* Accent red focus */
+            box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
+        }
 
-            .contact-form-wrapper .flex.mb-6.space-x-4 {
-                display: flex; /* Maintain flex for horizontal fields */
-                gap: 1.5rem; /* Custom gap */
-                margin-bottom: 1.5rem; /* Adjust margin */
-            }
+        .contact-form-wrapper .flex.mb-6.space-x-4 {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
 
-                .contact-form-wrapper .flex.mb-6.space-x-4 > div {
-                    flex: 1; /* Make columns even */
-                    width: auto; /* Override Tailwind's w-1/2 if needed */
-                }
+        .contact-form-wrapper .flex.mb-6.space-x-4 > div {
+            flex: 1;
+            width: auto;
+        }
 
 
-            .contact-form-wrapper button[type="submit"] {
-                width: 100%;
-                padding: 15px 25px;
-                background: #ff6b6b; /* Accent red */
-                color: white;
-                border: none;
-                border-radius: 30px;
-                font-size: 1.1rem;
-                font-weight: 600;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                margin-top: 15px;
-            }
+        .contact-form-wrapper button[type="submit"] {
+            width: 100%;
+            padding: 15px 25px;
+            background: #ff6b6b; /* Accent red */
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
 
-                .contact-form-wrapper button[type="submit"]:hover {
-                    background: #ff5252; /* Lighter accent red on hover */
-                    transform: translateY(-2px);
-                    box-shadow: 0 8px 15px rgba(255, 107, 107, 0.3);
-                }
+        .contact-form-wrapper button[type="submit"]:hover {
+            background: #ff5252; /* Lighter accent red on hover */
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(255, 107, 107, 0.3);
+        }
 
         /* Web3Forms Validation CSS */
         .invalid-feedback,
         .empty-feedback {
             display: none;
             font-size: 0.85rem;
-            color: #e74c3c; /* Red for feedback */
+            color: #e74c3c;
             margin-top: 5px;
         }
 
@@ -728,7 +810,7 @@
 
         .is-invalid,
         .was-validated :invalid {
-            border-color: #e74c3c !important; /* Red border for invalid fields */
+            border-color: #e74c3c !important;
         }
 
         /* Result message from Web3Forms */
@@ -737,30 +819,30 @@
             text-align: center;
             font-size: 1rem;
             font-weight: 600;
-            color: #555; /* Default color for please wait */
+            color: #555;
         }
 
-            #result.text-green-500 {
-                color: #27ae60; /* Green for success */
-            }
+        #result.text-green-500 {
+            color: #27ae60;
+        }
 
-            #result.text-red-500 {
-                color: #e74c3c; /* Red for error */
-            }
+        #result.text-red-500 {
+            color: #e74c3c;
+        }
 
 
         /* Footer */
         .footer {
             background: #222; /* Darker footer */
             color: white;
-            padding: 50px 0; /* More padding */
+            padding: 50px 0;
             text-align: center;
         }
 
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2.5rem; /* More space */
+            gap: 2.5rem;
             margin-bottom: 2.5rem;
         }
 
@@ -773,16 +855,16 @@
 
         .footer-section p,
         .footer-section a {
-            color: #bbb; /* Lighter gray for text */
+            color: #bbb;
             text-decoration: none;
-            line-height: 1.8; /* More line height */
+            line-height: 1.8;
             font-size: 0.95rem;
             transition: color 0.3s ease;
         }
 
-            .footer-section a:hover {
-                color: #ff6b6b; /* Accent red on hover */
-            }
+        .footer-section a:hover {
+            color: #ff6b6b; /* Accent red on hover */
+        }
 
         /* Animations */
         @keyframes fadeInUp {
@@ -843,35 +925,68 @@
                 padding: 1.8rem;
             }
 
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
+            /* Mobile adjustments for About section */
+            .about-main-content {
+                margin-bottom: 3rem; /* Less space on mobile */
             }
 
-            .about-image > div {
-                width: 300px;
-                height: 250px;
-                font-size: 4rem;
+            /* Mobile for Key Strengths section */
+            .key-strengths-section {
+                padding: 2.5rem 1rem; /* Adjust padding for mobile */
+                margin-top: 3rem; /* Adjust top margin for mobile */
             }
 
-            .contact-form-wrapper { /* Adjust container for smaller screens */
+            .key-strengths-section .section-title {
+                font-size: 1.75rem; /* Smaller title on mobile */
+                margin-bottom: 2rem;
+            }
+
+            .strengths-wrapper {
+                grid-template-columns: 1fr; /* Stack cards vertically on mobile */
+                gap: 1.5rem; /* Less gap on mobile */
+            }
+
+            .strength-card {
+                padding: 1.5rem; /* Less padding inside cards on mobile */
+            }
+
+            .strength-icon {
+                font-size: 2rem; /* Smaller icons on mobile */
+                margin-right: 0.8rem;
+            }
+
+            .strength-text h3 {
+                font-size: 1.15rem; /* Smaller heading on mobile */
+            }
+
+            .strength-text p {
+                font-size: 0.85rem; /* Smaller paragraph on mobile */
+            }
+
+
+            .experience-highlight {
+                font-size: 1.6rem;
+                padding: 10px 15px;
+            }
+
+            .contact-form-wrapper {
                 padding: 25px;
                 border-radius: 15px;
             }
 
-                .contact-form-wrapper .flex.mb-6.space-x-4 {
-                    flex-direction: column; /* Stack fields vertically on mobile */
-                    gap: 0; /* Remove gap */
-                }
+            .contact-form-wrapper .flex.mb-6.space-x-4 {
+                flex-direction: column;
+                gap: 0;
+            }
 
-                    .contact-form-wrapper .flex.mb-6.space-x-4 > div {
-                        width: 100%;
-                        margin-bottom: 1.5rem; /* Add vertical spacing */
-                    }
+            .contact-form-wrapper .flex.mb-6.space-x-4 > div {
+                width: 100%;
+                margin-bottom: 1.5rem;
+            }
 
-                        .contact-form-wrapper .flex.mb-6.space-x-4 > div:last-child {
-                            margin-bottom: 0; /* No margin on last item */
-                        }
+            .contact-form-wrapper .flex.mb-6.space-x-4 > div:last-child {
+                margin-bottom: 0;
+            }
 
             .footer-content {
                 grid-template-columns: 1fr;
@@ -880,7 +995,6 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <nav class="nav-container">
             <a href="#" class="logo">Global Study Advisors</a>
@@ -895,7 +1009,6 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Your Gateway to Global Education</h1>
@@ -904,7 +1017,6 @@
         </div>
     </section>
 
-    <!-- Countries Section -->
     <section id="countries" class="countries">
         <div class="container">
             <h2 class="section-title">Study Destinations</h2>
@@ -961,7 +1073,6 @@
         </div>
     </section>
 
-    <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
             <h2 class="section-title">Our Services</h2>
@@ -1000,7 +1111,6 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
         <div class="container">
             <h2 class="section-title">What Our Students Say</h2>
@@ -1039,26 +1149,73 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
             <h2 class="section-title">About Global Study Advisors</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>With over 15 years of experience in international education consulting, Global Study Advisors has helped thousands of students achieve their dreams of studying abroad. Our team of expert counselors provides personalized guidance throughout your entire journey.</p>
-                    <br>
-                    <p>We maintain strong relationships with top universities worldwide and stay updated with the latest immigration policies and academic requirements. Our success rate speaks for itself - over 95% of our students receive admission to their preferred universities.</p>
-                    <br>
-                    <p>From initial consultation to post-arrival support, we're with you every step of the way. Your success is our mission, and we're committed to making your study abroad dreams a reality.</p>
-                </div>
-                <div class="about-image">
-                    <div>🌍</div>
-                </div>
+            
+            <div class="about-main-content">
+                <p class="experience-highlight">Over 30 Years of Experience</p>
+                <p>For <strong>over three decades</strong>, Global Study Advisors has been at the forefront of international education. Our <strong>30+ years of dedicated experience</strong> means we bring an unmatched depth of knowledge and a proven track record to every student's journey. We don't just facilitate study abroad; we <strong>cultivate global careers</strong>.</p>
+
+                <h3>Guiding You to Elite Institutions</h3>
+                <p>We pride ourselves on <strong>guiding students to top-tier universities</strong> across the globe, from Ivy League institutions in the USA to Russell Group universities in the UK, and leading institutions in Canada, Australia, Germany, Ireland, and beyond. Our expert counselors possess intricate knowledge of admissions processes, scholarship opportunities, and visa requirements for the most competitive programs.</p>
+
+                <h3>Your Unrivaled Advantage: Career-Focused Guidance</h3>
+                <p>What truly sets Global Study Advisors apart is our <strong>unrivaled focus on career planning and global employability</strong>. Our core team members have <strong>successfully founded and scaled companies abroad</strong>, giving us a unique, firsthand understanding of the international business landscape. This invaluable experience, combined with our <strong>deep connections across various industries worldwide</strong>, means we don't just help you get into a great university; we show you how to leverage that education into a thriving career on the global stage.</p>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <section class="key-strengths-section">
+        <div class="container">
+            <h2 class="section-title">Our Key Strengths</h2>
+            <div class="strengths-wrapper">
+                <article class="strength-card">
+                    <i class="fas fa-search-location strength-icon"></i>
+                    <div class="strength-text">
+                        <h3>Strategic Matching</h3>
+                        <p>Aligning you with universities and programs tailored for optimal career outcomes.</p>
+                    </div>
+                </article>
+                <article class="strength-card">
+                    <i class="fas fa-clipboard-check strength-icon"></i>
+                    <div class="strength-text">
+                        <h3>Application Mastery</h3>
+                        <p>Expert crafting of essays, SOPs, and resumes for standout applications.</p>
+                    </div>
+                </article>
+                <article class="strength-card">
+                    <i class="fas fa-chart-line strength-icon"></i>
+                    <div class="strength-text">
+                        <h3>Career Guidance</h3>
+                        <p>Personalized advice on majors, internships, and skills for global market demands.</p>
+                    </div>
+                </article>
+                <article class="strength-card">
+                    <i class="fas fa-network-wired strength-icon"></i>
+                    <div class="strength-text">
+                        <h3>Network Building</h3>
+                        <p>Strategies to cultivate a powerful professional network abroad.</p>
+                    </div>
+                </article>
+                <article class="strength-card">
+                    <i class="fas fa-passport strength-icon"></i>
+                    <div class="strength-text">
+                        <h3>Visa Success</h3>
+                        <p>Simplifying visa processes with high approval rates and post-study options.</p>
+                    </div>
+                </article>
+                <article class="strength-card">
+                    <i class="fas fa-plane-departure strength-icon"></i>
+                    <div class="strength-text">
+                        <h3>End-to-End Support</h3>
+                        <p>Comprehensive pre-departure and post-arrival assistance for seamless transitions.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Get Started Today</h2>
@@ -1068,7 +1225,6 @@
                     <p>Fill up the form below to send us a message.</p>
                 </div>
                 <div class="m-7">
-                    <!-- This 'm-7' class doesn't exist in your custom CSS, can be removed or styled -->
                     <form action="https://api.web3forms.com/submit" method="POST" id="form" class="needs-validation" novalidate>
                         <input type="hidden" name="access_key" value="7526d078-fc71-4454-95fc-217d7d038460" />
                         <input type="hidden" name="subject" value="New Submission from Global Study Advisors Website" />
@@ -1179,7 +1335,7 @@
 
 <div class="mb-6">
     <label for="study_goals" class="block mb-2 text-sm">Your Study Abroad Goals and Aspirations</label>
-    <textarea rows="7" name="study_goals" id="study_goals" placeholder="Tell us about your academic, career, and personal goals for studying abroad. What do you hope to gain from this experience?" class="w-full px-3 py-2" required></textarea>
+    <textarea rows="7" name="study_goals" id="study_goals" placeholder="Tell us about your academic, career, and personal goals for studying abroad?" class="w-full px-3 py-2" required></textarea>
     <div class="empty-feedback invalid-feedback">
         Please describe your study abroad goals.
     </div>
@@ -1197,7 +1353,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -1227,9 +1382,6 @@
         </div>
     </footer>
 
-    <!-- Country Details Modal (Removed from index.html as content is now on separate pages) -->
-    <!-- <div id="countryModal" class="modal">...</div> -->
-
     <script>
         // Removed countryData object as it's no longer needed in index.html
         // Removed showCountryDetails and closeModal functions
@@ -1252,13 +1404,9 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('.header');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(231, 76, 60, 0.95)'; /* Semi-transparent red on scroll */
-                header.style.backdropFilter = 'blur(10px)';
-                header.style.boxShadow = '0 6px 30px rgba(0,0,0,0.2)';
+                header.classList.add('scrolled');
             } else {
-                header.style.background = 'linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)'; /* Original red gradient */
-                header.style.backdropFilter = 'none';
-                header.style.boxShadow = '0 4px 25px rgba(0,0,0,0.15)';
+                header.classList.remove('scrolled');
             }
         });
 
@@ -1330,8 +1478,8 @@
                         });
                     }, 500); // Adjust timeout if needed
                 }
-            }
-        });
+            });
+        })();
 
         /*
          * Web3Forms Form Validation and Submission Script
@@ -1414,7 +1562,3 @@
                     false
                 );
             });
-        })();
-    </script>
-</body>
-</html>
